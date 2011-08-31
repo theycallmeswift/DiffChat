@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>DiffChat</title>
+    <meta name="author" content="Team Drop Table Teams!!">
+    <meta name="description" content="Add description in future!">
+    <meta name="keywords" content="fix, me">
+    <link rel="stylesheet" type="text/css" href="/static/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/css3buttons.css">
+    <link rel="stylesheet/less" type="text/css" href="/static/css/global.less">
+    <link href='http://fonts.googleapis.com/css?family=Days+One' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="/nowjs/now.js"></script>
+  </head>
+  <body>
+    <header id="logo">
+      <div class="container">
+        <h1><a href="/">DiffChat</a></h1>
+        <h2>Realtime Code Review</h2>
+        <div id="user_links">
+          <% if(isLoggedIn) { %>
+            <a href="/logout" class="button" title="logout">
+              <span class="user icon"></span> Logout
+            </a>
+          <% } else { %>
+            <a href="/auth/github" class="button" title="Login with your Github Account">
+              <span class="user icon"></span>Login with Github
+            </a>
+          <% } %>
+        </div>
+      </div>
+    </header>
+    <div id="nav">
+      <div class="container">
+        <ul id="nav_tabs" class="clearfix">
+          <li><a href="/">Home</a></li>
+          <li><a href="/projects/top">Suggested Projects</a></li>
+          <li><a href="/projects">Your Projects</a></li>
+          <li><a href="/pages/about">About</a></li>
+          <li><form style="position:absolute; right:50px;" id="find_project" action="/find_proj" method='post'>
+                <input type="text" name="user[name]">
+                <input type="submit" value="Find Project">
+              </form>
+          </li>
+        </ul>
+      </div>
+      <div style="right:0;"> 
+       
+      </div>
+    </div>
+    <div class="container">
+      <div id="main" role="main" class="clearfix">
+        <%- body %>
+      </div>
+    </div>
+		<footer>
+			<p>&copy; 2011 Team'); DROP TABLE Teams; --</p>
+		</footer>
+    <script src="/static/js/less.min.js" type="text/javascript"></script>
+    <script src="/static/js/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/static/js/jquery.easing.js"></script>
+    <script type="text/javascript" src="/static/js/global.js"></script>
+
+  </body>
+</html>
+

@@ -1,0 +1,62 @@
+<h2>Viewing Pull #<%= pull_data.number %></h2>
+<div id="pull_id" pull_id="<%=pull_id%>"></div>
+
+<% for(var i = 0; i < pull_data.diff.length; i++){ %>
+  <div class="diff clearfix">
+    <div class="head">
+      <h3><%= pull_data.diff[i][0].text %></h3>
+      <div class="file"><%= pull_data.diff[i][1].text %></div>
+      <div class="file"><%= pull_data.diff[i][2].text %></div>
+      <div class="file"><%= pull_data.diff[i][3].text %></div>
+    </div>
+    <div class="nums_col">
+		<% for(var j=4; j<pull_data.diff[i].length; j++){ %>
+		<div class="num_col" id="num_col_line_<%= pull_data.diff[i][j].diffLine %>">
+			<a 
+				class="num <%= pull_data.diff[i][j].type %>"
+				data-diffLine="<%= pull_data.diff[i][j].diffLine %>"
+				data-file="<%= pull_data.diff[i][j].file %>"
+				data-line="<%= pull_data.diff[i][j].oldFileLine %>">
+				<%= pull_data.diff[i][j].oldFileLine %>
+			</a>
+			<a 
+				class="num <%= pull_data.diff[i][j].type %>"
+				data-diffLine="<%= pull_data.diff[i][j].diffLine %>"
+				data-file="<%= pull_data.diff[i][j].file %>"
+				data-line="<%= pull_data.diff[i][j].newFileLine %>">
+				<%= pull_data.diff[i][j].newFileLine %>
+			</a>
+		</div>
+		<% } %>
+    </div>
+    <div class="text_col">
+    <% for(var j = 4; j < pull_data.diff[i].length; j++){ %>
+      <div 
+        class="text line <%= pull_data.diff[i][j].type %>" 
+        id="line_<%= pull_data.diff[i][j].diffLine %>"
+        line="<%= pull_data.diff[i][j].diffLine %>"
+        file="<%= pull_data.diff[i][j].file %>">
+        <%= pull_data.diff[i][j].text %>
+      </div>
+    <% } %>
+    </div>
+  </div>
+<% } %>
+<div id="live_chat">
+	<div class="user_list">
+		<h5>Online Now</h5>
+		<ul id="online_users">
+		</ul>
+	</div>
+	<div class="chat_box">
+		<ul id="chat_messages">
+		</ul>
+	</div>
+		<form class="chat_input">
+			<div id="tokens" class="tokens">
+			</div>
+			<input type="text" class="chat_text" id="FUCKING_WORK" name="chat_text"/>
+		</form>
+</div>
+<div id="users_browsing_now">
+</div>

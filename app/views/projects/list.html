@@ -1,0 +1,11 @@
+<h2><%= user_name %> Repositories</h2>
+<div class="content">
+<% if(num_projects > 0) { %>
+  <ul>
+    <% for(var i = 0; i < num_projects; i++) { %>
+       <li><a style="font-size:14px;font-weight:bold;" href="/projects/<%= user_name  %>/<%= projects[i].name %>/pulls"><%= projects[i].name %></a></li>
+    <% } %>
+  </ul>
+<% } %>
+</div>
+<br/>

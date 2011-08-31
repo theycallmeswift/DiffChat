@@ -1,0 +1,14 @@
+<div class="repo_page">
+	<h1><%= repo.name %> Repo </h1>
+	<h2><%= repo.description %></h2>
+	<div class="content">
+	<ul>
+	<li>URL: <a href="<%= repo.html_url %>"><%= repo.html_url %></a></li>
+	<li>Git URL: <%= repo.git_url %> </li>
+	<li></li>
+	<li><%= repo.created_at %></li>
+	</ul>
+
+	<a href="/projects/<%= git_user %>/<%= repo.name %>/pulls">Pulls</a>
+	<a href="/projects">Back</a>
+</div>

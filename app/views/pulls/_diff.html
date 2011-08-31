@@ -1,0 +1,31 @@
+<% for(var i=0; i<diff.length; i++){ %>
+<div class="diff clearfix">
+  <div class="head">
+    <h3><%= diff[i][0].text %></h3>
+    <div class="file"><%= diff[i][1].text %></div>
+    <div class="file"><%= diff[i][2].text %></div>
+    <div class="file"><%= diff[i][3].text %></div>
+  </div>
+  <div class="nums_col">
+  <% for(var j=4; j<diff[i].length; j++){ %>
+    <a href="#" class="num <%= diff[i][j].type %>">
+      <%= diff[i][j].oldFileLine %>
+    </a>
+  <% } %>
+	</div>
+	<div class="nums_col">
+  <% for(var j=4; j<diff[i].length; j++){ %>
+    <a href="#" class="num <%= diff[i][j].type %>">
+      <%= diff[i][j].newFileLine %>
+    </a>
+  <% } %>
+  </div>
+  <div class="text_col">
+  <% for(var j=4; j<diff[i].length; j++){ %>
+    <div class="text line <%= diff[i][j].type %>">
+      <%= diff[i][j].text %>
+    </div>
+  <% } %>
+  </div>
+</div>
+<% } %>

@@ -1,0 +1,30 @@
+<h1><%= repo_data.name %> Repo </h1> 
+<br/>
+<a href="/projects/<%= user %>">Back</a>
+<br/>
+<div class="content">
+<ul>
+<li>URL: <a href="<%= repo_data.html_url %>"><%= repo_data.html_url %></a></li>
+<li>Git URL: <%= repo_data.git_url %> </li>
+<li><%= repo_data.description %></li>
+<li><%= repo_data.created_at %></li>
+</ul>
+
+<hr/>
+<br/>
+<h2> Pull Requests </h2>
+
+<ul>
+<% for(var j = 0; j < pulls.length; j++) { %>
+  <div class="content">
+  <ul>
+  <li><h5><a style="font-weight:bold; color:black;" href="/projects/<%= user %>/<%= repo %>/pulls/<%= pulls[j].number %>"><%= pulls[j].title %> - <%= pulls[j].number %></a></h5></li>
+  <li>State: <%= pulls[j].state %></li>
+  <li><%= pulls[j].body %></li>
+  <li><a href="<%= pulls[j].html_url %>"><%= pulls[j].html_url %></a></li>
+  <li>Created <%= pulls[j].created_at %></li>
+  </ul>
+  </div>
+  <hr />
+<% } %>
+</ul>

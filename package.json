@@ -1,0 +1,27 @@
+{
+  "name": "DiffChat",
+  "description": "real-time git wrapper",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:nko2/team-drop-table-team.git"
+  },
+  "author": "Team'); DROP TABLE TEAMS;",
+  "engines": {
+    "node": "~0.4.11"
+  },
+  "dependencies": {
+    "express": "2.4.6",
+    "mongoose": "2.0.2",
+    "ejs": "0.4.3",
+    "socket.io": "0.7.9",
+    "everyauth": "0.2.18",
+    "nko": "~0.1.1",
+    "less": "1.1.4",
+    "now": "0.5.1"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "devDependencies": {}
+}

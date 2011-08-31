@@ -1,0 +1,37 @@
+<script type='text/javascript'>
+
+function toggle(object) {
+  if (object.style.display == 'none') {
+    object.style.display = 'block';
+  } else {
+    object.style.display = 'none';
+  }
+}
+
+</script>  
+
+<p>
+  <h2>
+    You are viewing the repos dashboard!
+  </h2>
+</p>
+<br />
+<p>
+  <table class='repo_table'>
+  <% for(var i in repo_list) { 
+    var repo = repo_list[i];%>
+    <tr onclick="toggle(document.getElementById('<%=repo.name + '_feed'%>'))" >
+      <td <% if (i%2 == 0) { %> class='table_even' <% } else { %> class='table_odd' <% } %>>
+        <h2><a href='/repos/<%=repo._id%>'><%= repo.name %></a></h2>
+      </td>
+    </tr>
+    <tr id='<%=repo.name + '_feed'%>' class='expandable'>
+      <td>
+        <br/><br/><br/><br/><br/>
+      </td>
+    </tr>
+  <% } %>
+  </script>
+  </table>
+</p>
+<br /><br />

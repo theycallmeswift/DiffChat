@@ -1,0 +1,8 @@
+.DS_Store
+.idea
+.monitor
+node_modules
+tmp/*
+*.swp
+*.swo
+*.orig

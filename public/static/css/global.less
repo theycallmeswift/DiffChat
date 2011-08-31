@@ -1,0 +1,540 @@
+/* palette
+   http://www.colourlovers.com/palette/482416/Wasabi_Suicide */
+@musimusi-red: #FF4242;
+@dead-egg: #F4FAD2;
+@wasabi-green: #D4EE5E;
+@pebbles-green: #E1EDB9;
+@holding-white: #F0F2EB;
+@light-blue: #99CCCC;
+
+@font-size: 12px;
+
+@chat-total-height: 12.5em;
+@chat-input-height: 1.3em;
+@user-list-width: 18em;
+
+/* global rules */
+body {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: @font-size;
+	line-height: 1.4em;
+	background-color: lighten(@pebbles-green, 30%);
+	color: darken(@pebbles-green, 70%);
+	margin: 0em;
+	padding: 0em;
+	margin-bottom: @chat-total-height;
+	vertical-align: baseline;
+}
+a:link, a:visited {
+	color: darken(@pebbles-green, 90%);
+}
+a:hover {
+	color: darken(@pebbles-green, 50%);
+}
+h1 {
+	font-size: 2.2em;
+}
+h2 {
+	font-size: 1.6em;
+	margin-bottom: .7em;
+}
+h3 {
+	font-size: 1.4em;
+}
+h4 {
+	font-size: 1.2em;
+}
+h5 {
+	font-size: 1.1em;
+}
+h6 {
+	font-size: 1em;
+}
+h1,h2,h3,h4,h5,h6 {
+	font-weight: bold;
+}
+/* clearfix */
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+/* box functions */
+.border-radius (@radius) {
+  border-radius: @radius;
+  -moz-border-radius: @radius;
+  -webkit-border-radius: @radius;
+}
+
+.box (@color: @holding-white, @border-radius: 0px, @border-size: 0px, ) {
+	background-color: @color;
+	color: darken(@color, 80%);
+	border-width: @border-size;
+	border-style: solid;
+	border-color: darken(@color, 50%);
+	.border-radius(@border-radius);
+}
+/*---------------------------------------------------
+		LESS Elements 0.5
+	---------------------------------------------------
+		A set of useful LESS mixins by Dmitry Fadeyev
+		Special thanks for mixin suggestions to:
+			Kris Van Herzeele,
+			Benoit Adam,
+			Portenart Emile-Victor
+			
+		More info at: http://lesselements.com
+-----------------------------------------------------*/
+.gradient(@color: #F5F5F5, @start: #EEE, @stop: #FFF) {
+	background: @color;
+	background: -webkit-gradient(linear,
+	    												 left bottom,
+	    												 left top,
+	    												 @start,
+	    												 @stop);
+	background: -moz-linear-gradient(center bottom,
+	    														 @start 0%,
+	    														 @stop 100%);
+}
+.bw-gradient(@color: #F5F5F5, @start: 0, @stop: 255) {
+	background: @color;
+	background: -webkit-gradient(linear,
+	    												 left bottom,
+	    												 left top,
+	    												 color-stop(0, rgb(@start,@start,@start)),
+	    												 color-stop(1, rgb(@stop,@stop,@stop)));
+	background: -moz-linear-gradient(center bottom,
+	    														 rgb(@start,@start,@start) 0%,
+	    														 rgb(@stop,@stop,@stop) 100%);
+}
+.drop-shadow(@x-axis: 0, @y-axis: 1px, @blur: 2px, @alpha: 0.1) {
+	-webkit-box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+	-moz-box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+	box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+}
+.inner-shadow(@horizontal:0, @vertical:1px, @blur:2px, @alpha: 0.4) {
+  -webkit-box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
+  -moz-box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
+	box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
+}
+.box-shadow(@arguments) {
+	-webkit-box-shadow: @arguments;
+	-moz-box-shadow: @arguments;
+	box-shadow: @arguments;
+}
+.opacity(@opacity: 0.5) {
+	-moz-opacity: @opacity;
+	-khtml-opacity: @opacity;
+	-webkit-opacity: @opacity;
+	opacity: @opacity;
+}
+/* header styles */
+#logo {
+  background-color: @wasabi-green;
+  border-bottom: 1px solid darken(@wasabi-green, 15%);
+  padding-top: 1em;
+  text-shadow:0 0 2px lighten(@wasabi-green, 30%);
+}
+#logo h1 {
+  font-family: 'Days One', sans-serif;
+  margin-bottom: .2em;
+}
+#logo h1 a:link,
+#logo h1 a:visited {
+	text-decoration: none;
+	color: darken(@pebbles-green, 70%);
+}
+#logo h2 {
+  font-size: 1em;
+  margin-bottom: .7em;
+}
+#logo .container {
+  position: relative;
+}
+#logo .container #user_links {
+  position: absolute;
+  top: 10px;
+  right: 0;
+}
+h2.page_header {
+  margin-bottom: 1em;
+}
+.intro {
+	margin-bottom: 2em;
+}
+.intro .the_action_button {
+	margin-top: .5em;
+	margin-bottom: .5em;
+}
+.intro .page_header {
+	margin-bottom: 1em;
+	margin-top: 1em;
+}
+/* nav */
+#nav {
+  background-color: @pebbles-green;
+  border-bottom: 1px solid darken(@pebbles-green, 10%);
+  border-top: 1px solid lighten(@pebbles-green, 5%);
+  padding: .3em;
+  margin-bottom: 1.5em;
+}
+#nav_tabs li {
+  float: left;
+  margin-right: 1.5em;
+}
+#nav_tabs li a:link,
+#nav_tabs li a:visited {
+  font-size: 1.1em;
+  color: darken(@pebbles-green, 70%);
+  text-shadow:0 0 1px lighten(@wasabi-green, 30%);
+  text-decoration: none;
+}
+#nav_tabs li a:hover {
+  text-decoration: underline;
+}
+/* layout */
+.container {
+	width: 960 - (@font-size * 2);
+	margin: 0 auto;
+	padding: .5em 0em;
+}
+
+.content {
+	.box();
+	padding: 1em;
+}
+
+#live_chat .chat_box {
+	padding: .5em 0;
+}
+#live_chat {
+	position: fixed;
+	z-index: 3;
+	bottom: 0px;
+	left: 0px;
+	height: @chat-total-height;
+	width: 100%;
+	.box(@holding-white);
+	border-top: 1px solid darken(@holding-white, 30%);
+}
+#live_chat .user_list {
+	width: @user-list-width - 1em;
+	position: absolute;
+	height: @chat-total-height;
+	.box();
+	border-right: 1px solid darken(@holding-white, 10%);
+	padding: .5em;
+	margin-left: -.4em;
+}
+#live_chat .user_list h5 {
+	margin-bottom: .5em;
+	color: darken(@holding-white, 70%);
+	margin-left: .4em;
+}
+#live_chat .user_list li {
+	float: left;
+}
+#live_chat .user_list img {
+	width: 3em;
+	height: 3em;
+	margin-left: .4em;
+}
+#live_chat .chat_box {
+	padding-left: @user-list-width;
+	.box(lighten(@holding-white, 2%));
+	overflow-y: scroll;
+	height: (@chat-total-height - @chat-input-height) - 1.4em;
+}
+#live_chat .chat_box ul {
+	list-style: none;
+	margin: 0;
+	padding-left: 1em;
+	padding-right: 1em;
+}
+#live_chat .chat_box ul li {
+	border-bottom: 1px solid darken(@holding-white, 3%);
+	padding-bottom: .4em;
+	padding-top: .5em;
+}
+#live_chat .chat_box ul li .user a:link,
+#live_chat .chat_box ul li .user a:visited  {
+	color: darken(@holding-white, 60%);
+	text-decoration: none;
+}
+#live_chat .chat_box ul li .user a:hover {
+	color: darken(@holding-white, 70%);
+	text-decoration: underline;
+}
+#live_chat .chat_box ul li a:link {
+	color: darken(@holding-white, 70%);
+}
+#live_chat .chat_box ul li a:hover {
+	color: darken(@holding-white, 40%);
+}
+#live_chat .chat_box ul li a:visited {
+	color: darken(@holding-white, 50%);
+}
+#live_chat .chat_input {
+	height: @chat-input-height;
+	padding-left: @user-list-width - .4em;
+}
+#live_chat input[type=text] {
+	font-size: 12px;
+	height: @chat-input-height;
+	border: none;
+	border-top: 1px solid darken(@holding-white, 20%);
+	display: block;
+	width: 100%;
+	padding: .3em;
+	vertical-align: baseline;
+	background-color: lighten(@holding-white, 3%);
+	color: darken(@holding-white, 70%);
+}
+#live_chat input[type=text]:focus {
+	border-top: 1px solid darken(@holding-white, 20%);
+}
+.tokens {
+	position: absolute;
+	bottom: 1px;
+	right: 0px;
+}
+#chat_messages li {
+}
+#live_chat #chat_messages .tokens {
+	float: right;
+	position: static;
+}
+#live_chat #chat_messages .tokens .remove{
+	display: none;
+}
+.token {
+	float: left;
+	padding: .1em .3em;
+	background-color: @light-blue;
+	color: lighten(@light-blue, 20%);
+	margin-left: .3em;
+  .border-radius(3px);
+	color: darken(@light-blue, 50%);
+	display: block;
+}
+.token .file:link,
+.token .file:visited {
+	color: darken(@light-blue, 50%);
+	text-decoration: none;
+}
+.token .file:hover,
+#live_chat #chat_messages .token .file:hover{
+	text-decoration: underline;
+}
+.token .line {
+	font-weight: bold;
+}
+.remove:link,
+.remove:visited {
+	padding: 0 .3em;
+  .border-radius(3px);
+	background-color: darken(@musimusi-red, 20%);
+	color: lighten(@musimusi-red, 30%);
+	text-decoration: none;
+	font-size: .8em;
+	margin-left: .5em;
+	position: relative;
+	bottom: 1px;
+}
+#live_chat .chat_box .token {
+	display: inline;
+}
+/* DIFF Views */
+.diff {
+  font-family: Courier New, monospace;
+	.box(@holding-white, darken(@holding-white, 4%));
+  .border-radius(5px);
+  margin-bottom: 1em;
+  line-height: 1.6em;
+	padding: 5px;
+	border: 1px solid darken(@holding-white, 6%);
+}
+.diff .head {
+  background-color: darken(@holding-white, 5%);
+}
+.diff .num.head {
+  background-color: darken(@holding-white, 5%);
+}
+.diff .head div {
+  padding: .2em .5em;
+}
+.diff h3 {
+  background-color:  darken(@holding-white, 10%);
+  padding: .5em;
+  .border-radius(5px);
+}
+.diff .num {
+	float: left;
+	height: 1.6em;
+  background-color: darken(@holding-white, 10%);
+	cursor: pointer;
+	width: 2.5em;
+	text-align: center;
+}
+.diff .nums_col {
+  float: left;
+  margin-right: .5em;
+}
+.diff .num_row {
+}
+.diff .text_col {
+}
+.diff .text_col .text {
+  height: 1.6em;
+}
+.diff .num:link,
+.diff .num:visited {
+	padding: 0 .5em;
+  text-decoration: none;
+	color: darken(@holding-white, 60%);
+}
+.diff .num:hover {
+	color: darken(@holding-white, 80%);
+  background-color: darken(@holding-white, 15%);
+  text-decoration: underline;
+}
+.diff .add {
+  background-color: lighten(@wasabi-green, 20%);
+}
+.diff .highlight {
+  background-color: lighten(@light-blue, 10%);
+}
+.diff .rem {
+  background-color: lighten(@musimusi-red, 25%);
+}
+.diff .num.add,
+.diff .num.add:link,
+.diff .num.add:visited  {
+  color: darken(@wasabi-green, 60%);
+  background-color: @wasabi-green;
+}
+.diff .num.add:hover  {
+  color: darken(@wasabi-green, 60%);
+  background-color: darken(@wasabi-green, 20%);
+}
+.diff .highlight {
+  background-color: lighten(@light-blue, 10%);
+}
+.diff .num.rem,
+.diff .num.rem:link,
+.diff .num.rem:visited {
+  color: darken(@musimusi-red, 60%);
+  background-color: @musimusi-red;
+}
+.diff .num.rem:hover {
+  color: darken(@musimusi-red, 60%);
+  background-color: darken(@musimusi-red, 20%);
+}
+/* browsing user */
+.user_browsing {
+	width: 100%;
+	position: absolute;
+	left: 0px;
+}
+.browsing_line {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	border-top: 1px solid darken(@light-blue, 40%);
+	.opacity(0.5);
+}
+.user_browsing .user {
+	position: absolute;
+	right: .5em;
+	z-index: 2;
+}
+.user_browsing .user img {
+	position: relative;
+	top: 5px;
+	width: 40px;
+}
+.user_browsing .user .username:link,
+.user_browsing .user .username:visited {
+	position: absolute;
+	right: 45px;
+	top: 8px;
+	text-decoration: none;
+}
+.user_browsing .user .username:hover {
+	text-decoration: underline;
+}
+/* index page */
+#build_code {
+	float: right;
+}
+#three {
+	padding-top: 1em;
+	margin-top: 1em;
+	width: 100%;
+}
+.tri {
+	float: left;
+	width: 300px;
+	margin-right: 18px;
+}
+.last {
+	margin-right: 0px;
+}
+.tri img {
+	margin: .6em 0em;
+	.border-radius(5px);
+}
+.tri p {
+	font-size: 1.2em;
+	line-height: 1.4em;
+}
+/* repo page */
+.repo_page {
+
+}
+
+.repo_table td {
+  padding: 7px;
+}
+.table_even {
+  background-color: @light-blue;
+}
+.table_odd {
+  background-color: #FFFFFF;
+}
+.expandable {
+  display: none;
+}
+footer {
+	margin-top: 4em;
+	border-top: 1px solid #eee;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	width: 100%;
+}
+.text_col {
+  cursor: pointer;
+}
+#top_project_list {
+  li {
+    padding-left: 20px;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #aaa;
+  }
+  img {
+    float: left;
+    height: 40px;
+    width: 40px;
+    padding-right: 20px;
+  }
+  a {
+      text-decoration: none;
+  }
+  p {
+    margin-bottom: 10px;
+  }
+}
+
